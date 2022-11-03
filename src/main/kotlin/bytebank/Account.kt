@@ -1,13 +1,19 @@
 package bytebank
 
 class Account(
-    private var owner: String,
+    private val owner: String,
     private var numberAccount: Int,
     private var balance: Double
 ) {
 
     // Secondary constructor
-    constructor(owner: String, balance: Double) : this(owner, 0, balance)
+    constructor(owner: String, balance: Double) : this(owner, (0..1000).random(), balance) {
+        if (balance > 0) {
+            this.balance = balance
+        } else {
+            this.balance = 0.0
+        }
+    }
 
     // Return the extract of the account.
     fun extract(): String {
