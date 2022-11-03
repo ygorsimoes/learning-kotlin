@@ -1,12 +1,15 @@
 package bytebank
 
+import bytebank.account.CurrentAccount
+import bytebank.account.SavingsAccount
+
 fun main() {
-    val accountMarcio = Account(
+    val accountMarcio = CurrentAccount(
         owner = "Marcio",
-        numberAccount = 12345,
         balance = 50.0
     )
-    val accountGibson = Account(
+
+    val accountGibson = SavingsAccount(
         owner = "Gibson",
         balance = 100.0
     )
