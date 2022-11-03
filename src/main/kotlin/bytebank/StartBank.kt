@@ -8,7 +8,6 @@ fun main() {
     )
     val accountGibson = Account(
         owner = "Gibson",
-        numberAccount = 23456,
         balance = 100.0
     )
 

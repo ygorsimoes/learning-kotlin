@@ -6,6 +6,9 @@ class Account(
     private var balance: Double
 ) {
 
+    // Secondary constructor
+    constructor(owner: String, balance: Double) : this(owner, 0, balance)
+
     // Return the extract of the account.
     fun extract(): String {
         return """
