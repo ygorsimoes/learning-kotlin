@@ -3,10 +3,12 @@ package bytebank.account
 abstract class AbstractAccount(
     private val owner: String,
     private var numberAccount: Int,
-    private var balance: Double,
 ) {
-    private var rate: Double = 0.0
-        set(value) {
+    var balance: Double = 0.0
+        protected set
+
+    protected var rate: Double = 0.0
+        private set(value) {
             if (value >= 0.0) {
                 field = value
             }
@@ -20,8 +22,9 @@ abstract class AbstractAccount(
 
     // Secondary constructor
     constructor(owner: String, balance: Double, rate: Double) :
-            this(owner, (0..1000).random(), balance) {
+            this(owner, (0..1000).random()) {
         this.rate = rate
+        this.balance = balance
     }
 
     // Return the extract of the account.
@@ -30,14 +33,14 @@ abstract class AbstractAccount(
             =================================
             Owner: ${this.owner}
             Number Account: ${this.numberAccount}
-            Balance: ${this.balance}
-            Rate: ${this.rate}
+            Balance: ${this.balance}$
+            Rate: ${(this.rate * 100).toInt()}%
             =================================
         """.trimIndent()
     }
 
     // Deposit is a method that receives a value and adds it to the balance.
-    fun deposit(value: Double): Boolean {
+    open fun deposit(value: Double): Boolean {
         if (value > 0) {
             this.balance += value
             return true
@@ -46,7 +49,7 @@ abstract class AbstractAccount(
     }
 
     // Withdraw is a method that receives a value and subtracts it from the balance.
-    fun withdraw(value: Double): Boolean {
+    open fun withdraw(value: Double): Boolean {
         if (value > 0 && value <= this.balance) {
             this.balance -= value
             return true
@@ -56,14 +59,24 @@ abstract class AbstractAccount(
 
     // Transfer is a method that receives a value and subtracts it from the balance of the account that is making
     // the transfer.
-    fun transfer(destinationAccount: AbstractAccount, value: Double): Boolean {
-        if (destinationAccount.owner != this.owner) {
+    open fun transfer(destinationAccount: AbstractAccount, value: Double): Boolean {
+        if (equalsNumberAccount(destinationAccount)) {
+            return false
+        } else {
             if (value > 0 && value <= this.balance) {
-                this.balance -= value
+                this.withdraw(value)
                 destinationAccount.deposit(value)
                 return true
             }
+            return false
         }
-        return false
+    }
+
+    // Equals is a method that receives an object and compares it with the current object.
+    fun equalsNumberAccount(other: Any?): Boolean {
+        if (other == null || other !is AbstractAccount) {
+            return false
+        }
+        return this.numberAccount == other.numberAccount
     }
 }

@@ -6,7 +6,7 @@ import bytebank.account.SavingsAccount
 fun main() {
     val accountMarcio = CurrentAccount(
         owner = "Marcio",
-        balance = 50.0
+        balance = 100.0
     )
 
     val accountGibson = SavingsAccount(
@@ -14,14 +14,7 @@ fun main() {
         balance = 100.0
     )
 
-    accountMarcio.deposit(100.0)
-    accountMarcio.deposit(100.0)
-    accountMarcio.withdraw(150.0)
-
-    accountGibson.deposit(100.0)
-    accountGibson.withdraw(5.0)
-
-    accountMarcio.transfer(accountGibson, 100.0)
+    accountGibson.transfer(accountMarcio, 100.0)
 
     println(accountMarcio.extract() + "\n")
     println(accountGibson.extract() + "\n")
