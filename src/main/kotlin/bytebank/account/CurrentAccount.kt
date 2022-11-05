@@ -1,7 +1,7 @@
 package bytebank.account
 
-class CurrentAccount(
-    owner: String,
+open class CurrentAccount(
+    owner: Person,
     balance: Double
 ) : AbstractAccount(
     owner = owner,

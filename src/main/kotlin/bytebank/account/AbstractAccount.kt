@@ -1,8 +1,8 @@
 package bytebank.account
 
 abstract class AbstractAccount(
-    private val owner: String,
-    private var numberAccount: Int,
+    private val owner: Person,
+    protected var numberAccount: Int
 ) {
     var balance: Double = 0.0
         protected set
@@ -21,17 +21,18 @@ abstract class AbstractAccount(
         }
 
     // Secondary constructor
-    constructor(owner: String, balance: Double, rate: Double) :
+    constructor(owner: Person, balance: Double, rate: Double) :
             this(owner, (0..1000).random()) {
         this.rate = rate
         this.balance = balance
     }
 
     // Return the extract of the account.
-    fun extract(): String {
+    open fun extract(): String {
         return """
             =================================
-            Owner: ${this.owner}
+            Name: ${this.owner.getName()}
+            CPF: ${this.owner.getCpf()}
             Number Account: ${this.numberAccount}
             Balance: ${this.balance}$
             Rate: ${(this.rate * 100).toInt()}%

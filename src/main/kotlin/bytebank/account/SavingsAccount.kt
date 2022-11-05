@@ -1,7 +1,7 @@
 package bytebank.account
 
 class SavingsAccount(
-    owner: String,
+    owner: Person,
     balance: Double
 ) : AbstractAccount(
     owner = owner,
