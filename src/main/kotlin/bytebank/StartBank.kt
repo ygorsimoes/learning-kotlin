@@ -14,8 +14,8 @@ fun main() {
 
     val accountGibson = Developer(
         owner = Person(
-            "Gibson",
-            "123.456.789-10"
+            name = "Gibson",
+            cpf = "123.456.789-10"
         ),
     )
 
