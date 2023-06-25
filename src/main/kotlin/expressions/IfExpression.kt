@@ -11,13 +11,6 @@ fun main() {
     }
 }
 
-/**
- * if - Expression: Is used to declare a conditional expression, which means that it will return a value.
- * In Kotlin, if is an expression, i.e. it returns a value. Therefore, there is no ternary operator (condition ? then : else),
- * because ordinary if works fine in this role.
- *
- * Example: If the person is over 21 years old, it will return true, otherwise it will return false.
- */
 fun openInParty(myAge: Int): Boolean {
     val minimumAge = 21
 
@@ -31,11 +24,6 @@ fun openInParty(myAge: Int): Boolean {
     }
 }
 
-/**
- * if - Expression: Is used to declare a conditional expression, which means that it will return a value.
- *
- * Example: If the person is over 30 years old, it will return 3, otherwise it will return 0.
- */
 fun freeDrinks(myAge: Int): Int {
     val minimumAge = 30
     val maxDrinks = 3

@@ -5,9 +5,6 @@ fun main() {
     withoutTypeInference() // Variables without type inference
 }
 
-/**
- * Variables without type inference: Serves to declare a variable without a specific type.
- */
 fun withoutTypeInference() {
     val myString = "I'm a String."
     val myDouble = 3.1415
@@ -23,9 +20,6 @@ fun withoutTypeInference() {
     val myVariableDouble = myVariableInt.toDouble()
 }
 
-/**
- * Variables with type inference: Serves to declare a variable with a specific type.
- */
 fun withTypeInference() {
     val myString: String = "I'm a String."
     val myDouble: Double = 3.1415
