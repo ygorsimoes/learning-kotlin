@@ -15,7 +15,7 @@ fun withoutTypeInference() {
     val myBoolean = true
     val myChar = 'Y'
     val myFloat = 3.1415f
-    val myLong = 912829393448894L
+    val myLong = 91288894L
     val myShort = 10000
     val myByte = 127
 
@@ -33,7 +33,7 @@ fun withTypeInference() {
     val myBoolean: Boolean = true
     val myChar: Char = 'Y'
     val myFloat: Float = 3.1415f
-    val myLong: Long = 912829393448894L
+    val myLong: Long = 91288894L
     val myShort: Short = 10000
     val myByte: Byte = 127
 
