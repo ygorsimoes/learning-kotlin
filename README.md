@@ -1,5 +1,8 @@
 # Learning Kotlin
 
+[![Tests](https://github.com/ygorsimoes/learning-kotlin/actions/workflows/build-and-tests.yml/badge.svg)](https://github.com/ygorsimoes/learning-kotlin/actions/workflows/build-and-tests.yml)
+![GitHub](https://img.shields.io/github/license/ygorsimoes/learning-kotlin)
+
 Repository dedicated to learning the Kotlin programming language.
 
 ## Resources
@@ -8,8 +11,6 @@ Repository dedicated to learning the Kotlin programming language.
 - [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
 
 ## License
-
-![GitHub](https://img.shields.io/github/license/ygorsimoes/learning-kotlin)
 
 This repository is made with ❤️ by [Ygor Simões](https://github.com/ygorsimoes) and it's released under the 
 [Apache-2.0 license](https://github.com/ygorsimoes/learning-kotlin/blob/master/LICENSE).
